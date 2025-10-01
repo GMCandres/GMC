@@ -6,7 +6,7 @@ export default function Hero() {
   const logoColorHover = "#00cc77"
 
   return (
-    <section className="relative min-h-[75vh] md:min-h-[85vh] text-white overflow-hidden">
+    <section id="home" className="relative min-h-[75vh] md:min-h-[85vh] text-white overflow-hidden">
       {/* Imagen de fondo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
