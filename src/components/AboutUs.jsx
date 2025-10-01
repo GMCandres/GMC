@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutImage from '../assets/about-hero.jpg' // sube una imagen para esta sección
+import aboutImage from '../assets/about-hero.jpg' // asegúrate que este archivo exista en src/assets
 
 export default function AboutUs() {
   return (
@@ -7,7 +7,16 @@ export default function AboutUs() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
-          {/* Columna izquierda: Texto */}
+          {/* Columna izquierda: Imagen */}
+          <div className="rounded-2xl overflow-hidden shadow-lg border">
+            <img 
+              src={aboutImage} 
+              alt="GMC Solutions bespoke joinery" 
+              className="w-full h-full object-cover" 
+            />
+          </div>
+
+          {/* Columna derecha: Texto */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
               About Us
@@ -24,15 +33,6 @@ export default function AboutUs() {
               exceptional results. Whether it’s a custom staircase, a unique kitchen installation, or bespoke furniture, 
               we ensure that every detail is executed to perfection.
             </p>
-          </div>
-
-          {/* Columna derecha: Imagen */}
-          <div className="rounded-2xl overflow-hidden shadow-lg border">
-            <img 
-              src={aboutImage} 
-              alt="GMC Solutions bespoke joinery" 
-              className="w-full h-full object-cover" 
-            />
           </div>
 
         </div>
