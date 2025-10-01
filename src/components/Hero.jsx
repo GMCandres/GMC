@@ -1,33 +1,37 @@
 import React from 'react'
-
-// Por ahora usamos una URL pública en lugar de la imagen local
-const heroImg = 'https://images.unsplash.com/photo-1600607687920-4ce8c559d8df?q=80&w=1600&auto=format&fit=crop'
+import heroImg from '../assets/hero-image.jpg'
 
 export default function Hero() {
   return (
-    <section className="relative bg-gray-900 text-white">
-      <img
-        src={heroImg}
-        alt="Joinery craftsmanship"
-        className="w-full h-[85vh] object-cover opacity-70"
+    <section className="relative min-h-[75vh] md:min-h-[85vh] text-white">
+      {/* Imagen de fondo */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImg})` }}
+        aria-hidden="true"
       />
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+      {/* Overlay oscuro + degradado abajo */}
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/40 to-transparent" />
+
+      {/* Contenido */}
+      <div className="relative mx-auto max-w-7xl px-4 py-24 md:py-36 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           GMC Solutions
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mb-8 drop-shadow-lg">
+        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-white/90">
           Commercial and high-end residential joinery
         </p>
-        <div className="flex gap-3">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
             href="#contact"
-            className="bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-400 transition-all"
+            className="rounded-xl bg-yellow-500 text-gray-900 font-semibold px-6 py-3 hover:bg-yellow-400 transition"
           >
             Get a Free Quote
           </a>
           <a
             href="#projects"
-            className="border border-white/30 rounded-lg px-5 py-3 hover:bg-white/10 transition"
+            className="rounded-xl ring-1 ring-white/40 px-5 py-3 hover:bg-white/10 transition"
           >
             View Projects
           </a>
