@@ -7,7 +7,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section[id]')
-      let current = 'home'
+      let current = ''
 
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 120 // ajuste por el header
