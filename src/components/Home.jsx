@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section id="home" className="py-16 md:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
