@@ -1,7 +1,6 @@
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Home from './components/Home.jsx'
-import TrustBar from './components/TrustBar.jsx'
 import Services from './components/Services.jsx'
 import Projects from './components/Projects.jsx'
 import Process from './components/Process.jsx'
