@@ -17,7 +17,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 text-lg text-gray-600 leading-relaxed">
               Since 2018, GMC Solutions has curated a team of experts with extensive 
-              experience in joinery and carpentry spanning over 40 years. 
+              combined experience in joinery and carpentry for over 40 years. 
               Our collective expertise allows us to provide seamless service 
               from concept design through to completion. 
               Our commitment is to deliver high-quality products 
