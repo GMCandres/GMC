@@ -1,5 +1,7 @@
 import React from 'react'
-import heroImg from '../assets/hero-image.jpg'
+
+// Por ahora usamos una URL pública en lugar de la imagen local
+const heroImg = 'https://images.unsplash.com/photo-1600607687920-4ce8c559d8df?q=80&w=1600&auto=format&fit=crop'
 
 export default function Hero() {
   return (
