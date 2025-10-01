@@ -1,5 +1,6 @@
+// src/components/AboutUs.jsx
 import React from 'react'
-import aboutImage from '../assets/about-hero.jpg' // asegúrate que este archivo exista en src/assets
+import aboutImage from '../assets/about-hero.jpg'
 
 export default function AboutUs() {
   return (
@@ -11,7 +12,7 @@ export default function AboutUs() {
           <div className="rounded-2xl overflow-hidden shadow-lg border">
             <img 
               src={aboutImage} 
-              alt="GMC Solutions bespoke joinery" 
+              alt="About GMC Solutions - bespoke joinery and craftsmanship" 
               className="w-full h-full object-cover" 
             />
           </div>
