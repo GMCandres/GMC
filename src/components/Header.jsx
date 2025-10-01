@@ -5,15 +5,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-gray-900 text-white">
       <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-        {/* Logo + nombre */}
-        <div className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="GMC Solutions logo"
-            className="h-10 w-10 object-contain"
-          />
-          <span className="font-semibold text-lg">GMC Solutions</span>
-        </div>
+        {/* Logo más grande */}
+        <img
+          src={logo}
+          alt="GMC Solutions logo"
+          className="h-14 w-auto object-contain"
+        />
 
         {/* Navegación */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
