@@ -5,7 +5,7 @@ import TrustBar from './components/TrustBar.jsx'
 import Services from './components/Services.jsx'
 import Projects from './components/Projects.jsx'
 import Process from './components/Process.jsx'
-import About from './components/About.jsx'
+import AboutUs from './components/AboutUs.jsx'
 import CTA from './components/CTA.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
@@ -17,11 +17,11 @@ export default function App(){
       <Hero />
       {/* Nueva sección Home (resumen) */}
       <Home />
+      <AboutUs />
       <TrustBar />
       <Services />
       <Projects />
       <Process />
-      <About />
       <CTA />
       <Contact />
       <Footer />
