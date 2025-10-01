@@ -1,84 +1,71 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '../assets/logo.png'
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
-  const logoColor = "#00aa66"
-  const logoColorHover = "#00cc77"
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section[id]')
+      let current = 'home'
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120 // ajuste por el header
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id')
+        }
+      })
+
+      setActiveSection(current)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navItems = [
+    { id: 'home', label: 'HOME' },
+    { id: 'about', label: 'ABOUT US' },
+    { id: 'services', label: 'SERVICES' },
+    { id: 'projects', label: 'PROJECTS' },
+    { id: 'contact', label: 'CONTACT' },
+  ]
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-900 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+    <header className="fixed top-0 w-full bg-gray-900 text-white shadow z-50">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        
         {/* Logo */}
-        <img
-          src={logo}
-          alt="GMC Solutions logo"
-          className="h-14 w-auto object-contain"
-        />
+        <div className="flex items-center gap-2">
+          <img src={logo} alt="GMC Solutions Logo" className="h-12" />
+        </div>
 
-        {/* Menú desktop */}
-        <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-sm font-semibold tracking-wide">
-          <a href="#home" className="hover:text-yellow-400 transition">HOME</a>
-          <a href="#about" className="hover:text-yellow-400 transition">ABOUT US</a>
-          <a href="#services" className="hover:text-yellow-400 transition">SERVICES</a>
-          <a href="#projects" className="hover:text-yellow-400 transition">PROJECTS</a>
-          <a href="#contact" className="hover:text-yellow-400 transition">CONTACT</a>
-        </nav>
+        {/* Navegación */}
+        <nav className="flex gap-4 items-center">
+          {navItems.map(item => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`px-4 py-2 rounded-xl transition ${
+                activeSection === item.id 
+                  ? 'bg-[#00aa66] text-black font-semibold shadow-md'
+                  : 'hover:bg-[#00aa66] hover:text-black'
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
 
-        {/* Botón desktop */}
-        <a
-          href="#quote"
-          className="hidden md:inline-block rounded-xl px-4 py-2 font-semibold transition"
-          style={{ backgroundColor: logoColor, color: "#000000" }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = logoColorHover)}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = logoColor)}
-        >
-          GET A QUOTE
-        </a>
-
-        {/* Botón hamburguesa móvil */}
-        <button
-          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <svg
-            className="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {menuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-            )}
-          </svg>
-        </button>
-      </div>
-
-      {/* Menú móvil */}
-      {menuOpen && (
-        <div className="md:hidden bg-gray-800 text-white px-4 py-4 space-y-3 text-sm font-semibold tracking-wide">
-          <a href="#home" className="block hover:text-yellow-400 transition">HOME</a>
-          <a href="#about" className="block hover:text-yellow-400 transition">ABOUT US</a>
-          <a href="#services" className="block hover:text-yellow-400 transition">SERVICES</a>
-          <a href="#projects" className="block hover:text-yellow-400 transition">PROJECTS</a>
-          <a href="#contact" className="block hover:text-yellow-400 transition">CONTACT</a>
+          {/* Botón especial */}
           <a
             href="#quote"
-            className="block rounded-xl px-4 py-2 font-semibold transition"
-            style={{ backgroundColor: logoColor, color: "#000000" }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = logoColorHover)}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = logoColor)}
+            className="ml-4 rounded-xl px-4 py-2 font-semibold text-black shadow-md"
+            style={{ backgroundColor: '#00aa66' }}
           >
             GET A QUOTE
           </a>
-        </div>
-      )}
+        </nav>
+      </div>
     </header>
   )
 }
-
-
