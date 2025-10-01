@@ -1,24 +1,34 @@
+import React from 'react'
+import heroImg from '../assets/hero-image.jpg'
+
 export default function Hero() {
   return (
-    <section className="relative">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582588724789-989cf3c742bc?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center" />
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="relative mx-auto max-w-7xl px-4 py-28 md:py-40 text-white">
-        <h1 className="text-3xl md:text-6xl font-semibold max-w-3xl leading-tight">
-          Precision joinery and commercial fitouts, built in Sydney.
+    <section className="relative bg-gray-900 text-white">
+      <img
+        src={heroImg}
+        alt="Joinery craftsmanship"
+        className="w-full h-[85vh] object-cover opacity-70"
+      />
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+          GMC Solutions
         </h1>
-        <p className="mt-4 max-w-2xl text-lg md:text-xl text-white/90">
-          Kitchens, wardrobes, bespoke furniture, reception counters, wall panelling, and end‑to‑end site installation for residential and commercial projects.
+        <p className="text-lg md:text-xl max-w-2xl mb-8 drop-shadow-lg">
+          Commercial and high-end residential joinery
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a href="#quote" className="rounded-xl bg-white text-slate-900 px-5 py-3 font-medium">Request a Quote</a>
-          <a href="#projects" className="rounded-xl ring-1 ring-white/60 text-white px-5 py-3 font-medium hover:bg-white/10">View Projects</a>
-        </div>
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl text-sm text-white/80">
-          <div className="rounded-xl bg-white/10 p-4">In‑house design & CAD</div>
-          <div className="rounded-xl bg-white/10 p-4">Install team & site foreman</div>
-          <div className="rounded-xl bg-white/10 p-4">Australian standards & WHS</div>
-          <div className="rounded-xl bg-white/10 p-4">On‑time, on‑budget delivery</div>
+        <div className="flex gap-3">
+          <a
+            href="#contact"
+            className="bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-400 transition-all"
+          >
+            Get a Free Quote
+          </a>
+          <a
+            href="#projects"
+            className="border border-white/30 rounded-lg px-5 py-3 hover:bg-white/10 transition"
+          >
+            View Projects
+          </a>
         </div>
       </div>
     </section>
