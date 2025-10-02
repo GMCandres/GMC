@@ -36,7 +36,7 @@ export default function Hero() {
                 onMouseEnter={e => (e.currentTarget.style.backgroundColor = logoColorHover)}
                 onMouseLeave={e => (e.currentTarget.style.backgroundColor = logoColor)}
               >
-                Get a Free Quote
+                Contact Us
               </a>
               <a
                 href="#projects"
