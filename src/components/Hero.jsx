@@ -8,28 +8,24 @@ export default function Hero() {
       {/* Imagen de fondo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImg})` }}
+        style={{
+          backgroundImage: `url(${heroImg})`,
+          filter: 'brightness(0.7) contrast(1.05)' // <-- oscurece la imagen
+        }}
         aria-hidden="true"
       />
-      {/* Overlay oscuro */}
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/50 to-transparent" />
+      {/* Overlay extra para refuerzo */}
+      <div className="absolute inset-0 bg-black/35" />
 
       {/* Contenido */}
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="pt-[26vh] md:pt-[28vh] max-w-4xl">
-          {/* Título en dos líneas */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl leading-tight tracking-tight">
-            <span className="block font-light drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
-              Commercial and high-end
-            </span>
-            <span className="block font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
-              residential joinery
-            </span>
+        <div className="pt-[28vh] md:pt-[30vh] max-w-4xl">
+          <h1
+            className="text-3xl sm:text-4xl md:text-6xl font-light md:font-semibold leading-tight tracking-tight"
+            style={{ textShadow: '0 2px 6px rgba(0,0,0,0.5)' }}
+          >
+            Commercial and high-end residential joinery
           </h1>
-
-          {/* Línea acento */}
-          <div className="mt-6 h-1 w-24 rounded-full" style={{ backgroundColor: '#00aa66' }} />
 
           {/* Botones */}
           <div className="mt-16 md:mt-20 flex flex-wrap items-center gap-4">
@@ -41,23 +37,13 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="rounded-xl px-7 py-3 text-sm font-semibold tracking-wider uppercase text-black shadow-md hover:shadow-lg transition"
-              style={{ backgroundColor: '#00aa66' }}
+              className="rounded-xl px-7 py-3 text-sm font-semibold tracking-wider uppercase border transition shadow-sm
+                         text-white border-white/90 hover:bg-[#00aa66] hover:text-black hover:border-[#00aa66]"
             >
               Contact Us
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Indicador scroll opcional */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-xs tracking-widest uppercase">
-        <span className="inline-flex items-center gap-2">
-          Scroll
-          <svg width="18" height="18" viewBox="0 0 24 24" className="animate-bounce">
-            <path fill="currentColor" d="M12 16l-6-6h12z"/>
-          </svg>
-        </span>
       </div>
     </section>
   )
