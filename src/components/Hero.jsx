@@ -4,56 +4,56 @@ import heroImg from '../assets/hero-image.jpg'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[105vh] md:min-h-[110vh] text-white overflow-hidden">
+    <section id="top" className="relative min-h-[110vh] md:min-h-[115vh] text-white overflow-hidden">
       {/* Imagen de fondo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImg})` }}
         aria-hidden="true"
       />
-      {/* Overlay: oscuro + degradado inferior */}
+      {/* Overlay oscuro */}
       <div className="absolute inset-0 bg-black/40" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/50 to-transparent" />
 
       {/* Contenido */}
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="pt-[22vh] md:pt-[24vh] max-w-4xl">
-          {/* Título: solo el claim, sin 'GMC Solutions' visible */}
-          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.08] tracking-tight drop-shadow-[0_1px_12px_rgba(0,0,0,0.25)]">
-            Commercial and high-end residential joinery
+        <div className="pt-[26vh] md:pt-[28vh] max-w-4xl">
+          {/* Título en dos líneas */}
+          <h1 className="text-3xl sm:text-4xl md:text-6xl leading-tight tracking-tight">
+            <span className="block font-light drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
+              Commercial and high-end
+            </span>
+            <span className="block font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]">
+              residential joinery
+            </span>
           </h1>
 
-          {/* Acento: línea fina en verde */}
-          <div className="mt-5 h-1 w-24 rounded-full" style={{ backgroundColor: '#00aa66' }} />
+          {/* Línea acento */}
+          <div className="mt-6 h-1 w-24 rounded-full" style={{ backgroundColor: '#00aa66' }} />
 
-          {/* Subcopy opcional (puedes quitarlo si prefieres ultra minimal) */}
-          {/* <p className="mt-5 text-base md:text-lg text-white/85 max-w-2xl">
-            Bespoke craftsmanship, premium materials, delivered with precision from concept to completion.
-          </p> */}
-
-          {/* Bloque de botones separado del texto (más abajo) */}
-          <div className="mt-12 md:mt-14 flex flex-wrap items-center gap-3">
+          {/* Botones */}
+          <div className="mt-16 md:mt-20 flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="rounded-xl bg-gray-900/90 backdrop-blur px-6 py-3 text-white hover:bg-gray-800 transition shadow"
+              className="rounded-xl bg-gray-900/90 backdrop-blur px-7 py-3 text-sm font-semibold tracking-wider uppercase text-white hover:bg-gray-800 transition shadow"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="rounded-xl px-6 py-3 font-semibold text-black shadow-md hover:shadow-lg transition"
+              className="rounded-xl px-7 py-3 text-sm font-semibold tracking-wider uppercase text-black shadow-md hover:shadow-lg transition"
               style={{ backgroundColor: '#00aa66' }}
             >
-              Get a Free Quote
+              Contact Us
             </a>
           </div>
         </div>
       </div>
 
-      {/* Indicador de scroll (opcional) */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 text-xs tracking-wider">
+      {/* Indicador scroll opcional */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-xs tracking-widest uppercase">
         <span className="inline-flex items-center gap-2">
-          SCROLL
+          Scroll
           <svg width="18" height="18" viewBox="0 0 24 24" className="animate-bounce">
             <path fill="currentColor" d="M12 16l-6-6h12z"/>
           </svg>
