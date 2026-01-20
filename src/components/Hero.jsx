@@ -24,7 +24,7 @@ export default function Hero() {
             className="text-3xl sm:text-4xl md:text-6xl font-light md:font-semibold leading-tight tracking-tight"
             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.5)' }}
           >
-            Commercial and high-end residential joinery
+            Commercial and High-end Residential Carpentry and Joinery
           </h1>
 
           {/* Botones */}
