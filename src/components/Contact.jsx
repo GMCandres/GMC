@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xxxxabcd'
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgoaodgb'
 // TODO: Replace the Formspree endpoint above with the production form ID.
 
 const initialFormState = {
