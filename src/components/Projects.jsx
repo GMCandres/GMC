@@ -1,3 +1,4 @@
+import balgowlahMain from "../assets/projectBalgowlah/balgowlah-1.jpg"
 function Card({img}){
   return (
     <article className="group rounded-2xl overflow-hidden border bg-white">
@@ -12,22 +13,9 @@ function Card({img}){
     </article>
   )
 }
-function loadImages(globObj) {
-  return Object.entries(globObj)
-    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
-    .map(([, mod]) => mod.default)
-}
-
-const BALGOWLAH = loadImages(
-  import.meta.glob("../assets/projectBalgowlah/*.{jpg,jpeg,png,webp}", {
-    eager: true,
-  })
-)
-
 const imgs = [
-  BALGOWLAH[0]
+  balgowlahMain
 ]
-
 export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-slate-50">
