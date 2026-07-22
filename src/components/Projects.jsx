@@ -9,14 +9,20 @@ function Card({img}){
     </article>
   )
 }
+function loadImages(globObj) {
+  return Object.entries(globObj)
+    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+    .map(([, mod]) => mod.default)
+}
+
+const BALGOWLAH = loadImages(
+  import.meta.glob("../assets/projectBalgowlah/*.{jpg,jpeg,png,webp}", {
+    eager: true,
+  })
+)
 
 const imgs = [
-  'https://images.unsplash.com/photo-1600607687920-4ce8c559d8df?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1543217889-11ed1c50a43e?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1616597134686-7eaf5f1ac6ac?q=80&w=1200&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1600585154668-1e8a3c9d6f06?q=80&w=1200&auto=format&fit=crop',
+  BALGOWLAH[0]
 ]
 
 export default function Projects() {
