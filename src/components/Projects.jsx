@@ -1,7 +1,10 @@
 function Card({img}){
   return (
     <article className="group rounded-2xl overflow-hidden border bg-white">
-      <div className={`h-48 bg-[url('${img}')] bg-cover bg-center group-hover:scale-[1.02] transition`} />
+     <div
+  className="h-48 bg-cover bg-center group-hover:scale-[1.02] transition"
+  style={{ backgroundImage: `url(${img})` }}
+/>
       <div className="p-5">
         <h3 className="font-semibold">Project title</h3>
         <p className="text-sm text-slate-600">Location • Scope • Year</p>
