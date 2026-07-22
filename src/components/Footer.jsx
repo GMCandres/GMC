@@ -14,7 +14,7 @@ export default function Footer() {
 </a>
 
 <a
-  href="PEGA_AQUI_EL_LINK_DE_FACEBOOK"
+  href="https://www.facebook.com/share/1BkqgJLFGs/?mibextid=wwXIfr"
   target="_blank"
   rel="noopener noreferrer"
   className="hover:text-slate-700"
