@@ -1,4 +1,4 @@
-import balgowlahMain from "../assets/projectBalgowhlah/balgowlah-1.jpg"
+import balgowhlahMain from "../assets/projectBalgowhlah/balgowlah-1.jpg"
 function Card({img}){
   return (
     <article className="group rounded-2xl overflow-hidden border bg-white">
