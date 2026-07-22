@@ -7,8 +7,8 @@ function Card({img}){
   style={{ backgroundImage: `url(${img})` }}
 />
       <div className="p-5">
-        <h3 className="font-semibold">Project title</h3>
-        <p className="text-sm text-slate-600">Location • Scope • Year</p>
+       <h3 className="font-semibold">Balgowlah Commercial Fitout</h3>
+<p className="text-sm text-slate-600">Balgowlah • Joinery & Fitout • 2026</p>
       </div>
     </article>
   )
