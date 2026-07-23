@@ -21,12 +21,3 @@ export default function Footer() {
 >
   Facebook
 </a>
-
-<a
-  href="PEGA_AQUI_EL_LINK_DE_LINKEDIN"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="hover:text-slate-700"
->
-  LinkedIn
-</a>
