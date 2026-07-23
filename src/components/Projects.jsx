@@ -37,14 +37,24 @@ const terreyHillsGallery = loadImages(
 
 const projects = [
   {
-    title: "Balgowlah Commercial Fitout",
-    details: "Balgowlah • Commercial Joinery • 2026",
+    title: "Wahroonga",
+    details: "Wahroonga • 2026",
+    gallery: wahroongaGallery,
+  },
+  {
+    title: "Balgowlah",
+    details: "Balgowlah • 2025",
     gallery: balgowlahGallery,
   },
   {
-    title: "St Alexandria Commercial Fitout",
-    details: "Alexandria • Commercial Joinery • 2026",
+    title: "Bourke St Alexandria",
+    details: "Alexandria • 2024–2025",
     gallery: stAlexandriaGallery,
+  },
+  {
+    title: "Terrey Hills Hospital",
+    details: "Terrey Hills • 2022–2023",
+    gallery: terreyHillsGallery,
   },
 ]
 
