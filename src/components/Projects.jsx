@@ -15,16 +15,54 @@ const balgowlahGallery = loadImages(
   )
 )
 
+const stAlexandriaGallery = loadImages(
+  import.meta.glob(
+    "../assets/projectStAlexandria/*.{jpg,jpeg,png,webp}",
+    { eager: true }
+  )
+)
+
+const projects = [
+  {
+    title: "Balgowlah Commercial Fitout",
+    details: "Balgowlah • Commercial Joinery • 2026",
+    gallery: balgowlahGallery,
+  },
+  {
+    title: "St Alexandria Commercial Fitout",
+    details: "Alexandria • Commercial Joinery • 2026",
+    gallery: stAlexandriaGallery,
+  },
+]
+
 export default function Projects() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [activeProject, setActiveProject] = useState(null)
   const [currentImage, setCurrentImage] = useState(0)
 
+  function openProject(project) {
+    setActiveProject(project)
+    setCurrentImage(0)
+  }
+
+  function closeProject() {
+    setActiveProject(null)
+    setCurrentImage(0)
+  }
+
   function previousImage() {
-    setCurrentImage((currentImage - 1 + balgowlahGallery.length) % balgowlahGallery.length)
+    const galleryLength = activeProject.gallery.length
+
+    setCurrentImage(
+      (currentImage - 1 + galleryLength) % galleryLength
+    )
   }
 
   function nextImage() {
-    setCurrentImage((currentImage + 1) % balgowlahGallery.length)
+    const galleryLength = activeProject.gallery.length
+
+    setCurrentImage(
+      (currentImage + 1) % galleryLength
+    )
   }
 
   return (
@@ -50,48 +88,48 @@ export default function Projects() {
         </div>
 
         <div className="mt-8 grid md:grid-cols-3 gap-6">
-          <button
-            type="button"
-            onClick={() => {
-              setCurrentImage(0)
-              setIsOpen(true)
-            }}
-            className="text-left rounded-2xl overflow-hidden border bg-white"
-          >
-            <img
-              src={balgowlahGallery[0]}
-              alt="Balgowlah Commercial Fitout"
-              className="w-full h-48 object-cover"
-            />
+          {projects.map((project) => (
+            <button
+              key={project.title}
+              type="button"
+              onClick={() => openProject(project)}
+              className="text-left rounded-2xl overflow-hidden border bg-white"
+            >
+              <img
+                src={project.gallery[0]}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
 
-            <div className="p-5">
-              <h3 className="font-semibold">
-                Balgowlah Commercial Fitout
-              </h3>
+              <div className="p-5">
+                <h3 className="font-semibold">
+                  {project.title}
+                </h3>
 
-              <p className="text-sm text-slate-600">
-                Balgowlah • Commercial Joinery • 2026
-              </p>
+                <p className="text-sm text-slate-600">
+                  {project.details}
+                </p>
 
-              <p className="mt-3 text-sm font-semibold">
-                View project
-              </p>
-            </div>
-          </button>
+                <p className="mt-3 text-sm font-semibold">
+                  View project
+                </p>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
 
-      {isOpen && (
+      {activeProject && (
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
           <div className="relative bg-white rounded-2xl overflow-hidden w-full max-w-5xl">
             <div className="flex items-center justify-between p-4">
               <h3 className="font-semibold text-lg">
-                Balgowlah Commercial Fitout
+                {activeProject.title}
               </h3>
 
               <button
                 type="button"
-                onClick={() => setIsOpen(false)}
+                onClick={closeProject}
                 className="text-2xl px-3"
               >
                 ×
@@ -100,12 +138,12 @@ export default function Projects() {
 
             <div className="relative bg-black">
               <img
-                src={balgowlahGallery[currentImage]}
-                alt={`Balgowlah project ${currentImage + 1}`}
+                src={activeProject.gallery[currentImage]}
+                alt={`${activeProject.title} ${currentImage + 1}`}
                 className="w-full h-[65vh] object-contain"
               />
 
-              {balgowlahGallery.length > 1 && (
+              {activeProject.gallery.length > 1 && (
                 <>
                   <button
                     type="button"
@@ -127,7 +165,7 @@ export default function Projects() {
             </div>
 
             <p className="text-center p-3 text-sm text-slate-600">
-              {currentImage + 1} of {balgowlahGallery.length}
+              {currentImage + 1} of {activeProject.gallery.length}
             </p>
           </div>
         </div>
