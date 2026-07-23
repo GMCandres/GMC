@@ -21,3 +21,9 @@ export default function Footer() {
 >
   Facebook
 </a>
+          
+        </nav>
+      </div>
+    </footer>
+  )
+}
