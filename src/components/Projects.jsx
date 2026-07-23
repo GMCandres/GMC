@@ -132,10 +132,11 @@ export default function Projects() {
                 <p className="text-sm text-slate-600">
                   {project.details}
                 </p>
-
-                <p className="mt-3 text-sm font-semibold">
-                  View project
-                </p>
+                
+<p className="mt-3 text-sm font-semibold">
+  View gallery
+</p>
+              
               </div>
             </button>
           ))}
