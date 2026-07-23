@@ -21,6 +21,19 @@ const stAlexandriaGallery = loadImages(
     { eager: true }
   )
 )
+const wahroongaGallery = loadImages(
+  import.meta.glob(
+    "../assets/projectWahroonga/*.{jpg,jpeg,png,webp}",
+    { eager: true }
+  )
+)
+
+const terreyHillsGallery = loadImages(
+  import.meta.glob(
+    "../assets/projectTerreyHills/*.{jpg,jpeg,png,webp}",
+    { eager: true }
+  )
+)
 
 const projects = [
   {
