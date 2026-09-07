@@ -15,11 +15,34 @@ const balgowlahGallery = loadImages(
   )
 )
 
-const stAlexandriaGallery = loadImages(
-  import.meta.glob(
-    "../assets/projectStAlexandria/*.{jpg,jpeg,png,webp}",
-    { eager: true }
+const stAlexandriaImages = import.meta.glob(
+  "../assets/projectStAlexandria/*.{jpg,jpeg,png,webp}",
+  { eager: true }
+)
+
+const getStAlexandriaImage = (number) => {
+  const entry = Object.entries(stAlexandriaImages).find(([path]) =>
+    path.endsWith(`/stalexandria-${number}.jpg`)
   )
+  return entry?.[1]?.default
+}
+
+const stAlexandriaGallery = [
+  9,
+  13,
+  10,
+  11,
+  12,
+  7,
+  5,
+  14,
+  8,
+  1,
+  2,
+  3,
+  4,
+  6,
+].map(getStAlexandriaImage).filter(Boolean)
 )
 const wahroongaGallery = loadImages(
   import.meta.glob(
