@@ -63,11 +63,12 @@ const terreyHillsGallery = loadImages(
 )
 
 const projects = [
-    {
+{
   title: "Canteen",
   details: "The University of Sydney • 2026",
   gallery: canteenGallery,
 },
+  {
     title: "Wahroonga",
     details: "Wahroonga • 2026",
     gallery: wahroongaGallery,
