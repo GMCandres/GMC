@@ -43,7 +43,6 @@ const stAlexandriaGallery = [
   4,
   6,
 ].map(getStAlexandriaImage).filter(Boolean)
-)
 const wahroongaGallery = loadImages(
   import.meta.glob(
     "../assets/projectWahroonga/*.{jpg,jpeg,png,webp}",
