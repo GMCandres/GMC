@@ -7,7 +7,12 @@ function loadImages(globObj) {
     )
     .map(([, file]) => file.default)
 }
-
+const canteenGallery = loadImages(
+  import.meta.glob(
+    "../assets/projectCanteen/*.{jpg,jpeg,JPG,JPEG,png,webp}",
+    { eager: true }
+  )
+)
 const balgowlahGallery = loadImages(
   import.meta.glob(
     "../assets/projectBalgowhlah/*.{jpg,jpeg,png,webp}",
@@ -58,7 +63,11 @@ const terreyHillsGallery = loadImages(
 )
 
 const projects = [
-  {
+    {
+  title: "Canteen",
+  details: "The University of Sydney • 2026",
+  gallery: canteenGallery,
+},
     title: "Wahroonga",
     details: "Wahroonga • 2026",
     gallery: wahroongaGallery,
