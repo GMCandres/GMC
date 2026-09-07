@@ -47,8 +47,8 @@ const projects = [
     gallery: balgowlahGallery,
   },
   {
-    title: "Bourke St Alexandria",
-    details: "Alexandria • 2024–2025",
+    title: "Time & Place",
+    details: "Bourke St, Alexandria • 2024–2025",
     gallery: stAlexandriaGallery,
   },
   {
