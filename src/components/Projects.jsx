@@ -6,13 +6,32 @@ function loadImages(globObj) {
       a.localeCompare(b, undefined, { numeric: true })
     )
     .map(([, file]) => file.default)
-}
-const canteenGallery = loadImages(
-  import.meta.glob(
-    "../assets/projectCanteen/*.{jpg,jpeg,JPG,JPEG,png,webp}",
-    { eager: true }
-  )
+const canteenImages = import.meta.glob(
+  "../assets/projectCanteen/*.{jpg,jpeg,JPG,JPEG,png,webp}",
+  { eager: true }
 )
+
+const getCanteenImage = (number) => {
+  const entry = Object.entries(canteenImages).find(([path]) =>
+    path.toLowerCase().endsWith(`/canteen-${number}.jpg`)
+  )
+  return entry?.[1]?.default
+}
+
+const canteenGallery = [
+  11,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+].map(getCanteenImage).filter(Boolean)
+
 const balgowlahGallery = loadImages(
   import.meta.glob(
     "../assets/projectBalgowhlah/*.{jpg,jpeg,png,webp}",
